@@ -8,17 +8,20 @@
 	<!--banner-->
 
 	<!--content-->
-		<div class="container">
+		<div class="container" style="height: auto;">
 			<div class="card" style="">
 				<div class="card-body">
 					@if (session()->has('success'))
 					<h3 class="mt-5 text-center"><div class="alert alert-success ">{{ session()->get('success') }}</div></h3> 
                 	@endif
+					@if (session()->has('error'))
+					<h3 class="mt-5 text-center"><div class="alert alert-danger ">{{ session()->get('error') }}</div></h3> 
+                	@endif
 					<div class="col-lg-12 checkout">
 						<div class="row">
 							<div class="col-md-6">
 								<h3 class="text-center">Login</h3>
-								<form action="" method="post ">
+								<form action="{{ url('/vendor/login') }}" method="post">
 								@csrf
 									<div class="form-group">
 										<label>Email</label>
