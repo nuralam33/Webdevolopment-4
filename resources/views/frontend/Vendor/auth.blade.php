@@ -2,7 +2,7 @@
 @section('content')
     
 			<div class="container">
-				<h3 class=" mt-5 text-center "><a href="{{ url('/') }}">Home</a>/<span>Registered</span></h3>
+				<h3 class=" mt-5 text-center "><a href="{{ url('/') }}">Home</a> / <span>Registered</span></h3>
 			</div>
 		</div>
 	<!--banner-->
@@ -20,6 +20,7 @@
 					<div class="col-lg-12 checkout">
 						<div class="row">
 							<div class="col-md-6">
+								{{-- login part --}}
 								<h3 class="text-center">Login</h3>
 								<form action="{{ url('/vendor/login') }}" method="post">
 								@csrf
@@ -34,6 +35,7 @@
 									<button class="btn btn-primary">Login</button>
 								</form>
 							</div>
+								{{--  --}}
 							<div class="col-md-6">
 								<h3 class="text-center">Register</h3>
 								<form action="{{ url('/vendor/registration') }}" method="post" enctype="multipart/form-data">

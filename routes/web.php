@@ -27,6 +27,7 @@ Route::get('/vendor/register', [VendorController::class, 'vendorRegister']);
 Route::post('/vendor/registration', [VendorController::class, 'vendorRegistration']);
 Route::post('/vendor/login', [VendorController::class, 'vendorLogin']);
 Route::get('/vendor/dashboard', [VendorController::class, 'vendorDashboard']);
+Route::get('/vendor/product/create', [VendorController::class, 'vendorProductCreateForm']);
 
 
 

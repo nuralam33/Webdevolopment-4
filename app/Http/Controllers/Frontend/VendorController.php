@@ -58,7 +58,11 @@ class VendorController extends Controller
     }
     public function vendorDashboard()
     {
-        return "Vendor Dashboard";
+        return view('frontend.vendor.dashboard');
+    }
+    public function vendorProductCreateForm()
+    {
+        return view('frontend.vendor.create');
     }
 }
 
