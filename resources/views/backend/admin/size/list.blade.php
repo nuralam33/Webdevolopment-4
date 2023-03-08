@@ -33,6 +33,6 @@
         @endforeach
         </table>
     </div>
-    {{ $Sizes->links() }}
+    {{$sizes->links()}}
 </div>
 @endsection

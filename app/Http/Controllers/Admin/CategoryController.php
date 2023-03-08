@@ -71,7 +71,8 @@ class CategoryController extends Controller
     public function categoryDelete($id)
     {
        $category = Category::find($id);
-       $category->delete();
+       $category->delete();    
+    //    $category->size()->delete();
        return redirect('/category/manage')->with('success','Category has been Deleted');
     }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('address');
             $table->string('logo');
             $table->string('password');
+            $table->boolean('is_approved')->default(false);
             $table->timestamps();
         });
     }

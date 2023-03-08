@@ -7,8 +7,28 @@
 					<div class="top-right">
 					<ul>
 						<li><a href="#">Checkout</a></li>
-						<li><a href="{{url('/vendor/login') }}">Vendor Login</a></li>
-						<li><a href="{{url('/vendor/register') }}">Vendor Account </a></li>
+						@if (auth()->check())
+							<li><a href="{{ route('login') }}" class="badge badge-danger">{{ auth()->user()->name }}</a></li>
+						<li>
+							<a href="#" onclick="event.preventDefault();
+							document.getElementById('logout-form').submit();">
+			  				 Logout</a>
+							   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+								@csrf
+							</form>
+							</li>
+						@else
+							<li><a href="{{ route('login') }}">User Login</a></li>
+							<li><a href="{{ route('register') }}">User Register </a></li>
+							
+						@endif
+						@if (session()->has('vendorId'))
+							<li><a href="{{url('/vendor/dashboard') }}" class="badge badge-danger">{{ session()->get('vendorName') }}</a></li>
+							<li><a href="{{url('/vendor/logout') }}">Logout</a></li>
+						@else
+							<li><a href="{{url('/vendor/register') }}">Vendor Login</a></li>
+							<li><a href="{{url('/vendor/register') }}">Vendor Account </a></li>
+						@endif
 					</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -58,17 +78,28 @@
 							</nav>
 						</div>
 						<div class="header-right2">
-							<div class="cart box_1">
-								<a href="checkout.html">
-									<h3> <div class="total">
-										<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-										<img src="images/bag.png" alt="" />
-									</h3>
-								</a>
-								<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-								<div class="clearfix"> </div>
-							</div>	
-						</div>
+							@if ($cartProducts > 0)
+								<div class="cart box_1">
+									<a href="{{ url('/checkout') }}">
+										<h3> <div class="total">
+											<span class=""></span>({{ $cartProducts }} items)</div>
+											<img src="{{ asset('/frontend/assets/') }}/images/bag.png" alt="" />
+										</h3>
+									</a>
+								</div>
+							@else
+								<div class="cart box_1">
+									<a href="#">
+										<h3> <div class="total">
+											<span class=""></span>({{ $cartProducts }}items)</div>
+											<img src="{{ asset('/frontend/assets/') }}/images/bag.png" alt="" />
+										</h3>
+									</a>
+									<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+									<div class="clearfix"> </div>
+								</div>	
+								</div>
+							@endif
 						<div class="clearfix"> </div>
 					</div>
 				</div>

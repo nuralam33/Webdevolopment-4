@@ -93,16 +93,17 @@
 		<div class="container">
 			<h2 class="tittle">New Arrivals</h2>
 			<div class="arrivals-grids">
+				@foreach ($new_products as $product )
 				<div class="col-md-3 arrival-grid simpleCart_shelfItem">
 					<div class="grid-arr">
 						<div  class="grid-arrival">
 							<figure>		
 								<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
 									<div class="grid-img">
-										<img  src="{{ asset('/frontend/assets/') }}/images/p6.jpg" class="img-responsive" alt="">
+										<img  src="{{ asset('/product/'.$product->image) }}"class="img-responsive" alt="">
 									</div>
 									<div class="grid-img">
-										<img  src="{{ asset('/frontend/assets/') }}/images/p5.jpg" class="img-responsive"  alt="">
+										<img  src="{{ asset('/product/'.$product->image) }}"class="img-responsive"  alt="">
 									</div>			
 								</a>		
 							</figure>	
@@ -117,94 +118,15 @@
 										<div class="starbox small ghosting"> </div>
 									</div>
 									<div class="women">
-										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<h6><a href="single.html">{{ $product->name }}</a></h6>
+										<span class="size">{{ $product->size->name }}</span>
+										<p ><em class="item_price">${{ $product->price }}</em></p>
 										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal2">
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p7.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p8.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
-									</div>
-									<div class="ribben2">
-										<p>OUT OF STOCK</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class=" my-cart-b item_add">Add To Cart</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal3">
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p10.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p9.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
-									</div>
-									<div class="ribben1">
-										<p>SALE</p>
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal4">
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p11.jpg" class="img-responsive" alt="">
-												</div>
-												<div class="grid-img">
-													<img  src="{{ asset('/frontend/assets/') }}/images/p12.jpg" class="img-responsive"  alt="">
-												</div>			
-											</a>		
-										</figure>	
-									</div>
-									<div class="block">
-										<div class="starbox small ghosting"> </div>
-									</div>
-									<div class="women">
-										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-										<span class="size">XL / XXL / S </span>
-										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-									</div>
-								</div>
-							</div>
+				@endforeach
+				
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -223,249 +145,65 @@
 			</div>
 			<!--accessories-->
 			<!--Products-->
-				<div class="product-agile">
-					<div class="container">
-						<h3 class="tittle1"> New Products</h3>
-						<div class="slider">
-							<div class="callbacks_container">
-								<ul class="rslides" id="slider">
-									<li>	 
-										<div class="caption">
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p14.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p13.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
+<div class="product-agile">
+	<div class="container">
+		<h3 class="tittle1"> Hot Products</h3>
+		<div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>	 
+						<div class="caption">
+							@foreach ($hot_products as $product )
+							<div class="col-md-3 cap-left simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>		
+											<a href="single.html">
+												<div class="grid-img">
+													<img  src="{{ asset('/product/'.$product->image) }}"class="img-responsive" alt="">
 												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p15.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p16.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p18.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p17.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben1">
-														<p>SALE</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p20.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p19.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>-20%</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
+												<div class="grid-img">
+													<img  src="{{ asset('/product/'.$product->image) }}"class="img-responsive"  alt="">
+												</div>			
+											</a>		
+										</figure>	
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<form action="{{ url('/add/to/cart') }}" method="post">
+										@csrf
+										<input type="hidden" name="vendor_id" value="{{ $product->vendor_id }}"/>
+										<input type="hidden" name="product_id" value="{{ $product->id }}"/>
+										<input type="hidden" name="price" value="{{ $product->price }}"/>
+										<div class="women">
+											<h6><a href="#">{{ $product->name }}</a></h6>
+											<span class="size">{{ $product->size->name }}</span>
+											<p ><em class="item_price">${{ $product->price }}</em></p>
+											@if (auth()->check())
+												<button class="btn btn-sm btn-primary">Add To Cart</button>
+											@else
+											<a href="{{ url('/login') }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+											@endif
+
 										</div>
-									</li>
-									<li>	 
-										<div class="caption">
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p21.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p22.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p24.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p23.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p26.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p25.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>-75%</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 cap-left simpleCart_shelfItem">
-												<div class="grid-arr">
-													<div  class="grid-arrival">
-														<figure>		
-															<a href="single.html">
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p10.jpg" class="img-responsive" alt="">
-																</div>
-																<div class="grid-img">
-																	<img  src="{{ asset('/frontend/assets/') }}/images/p9.jpg" class="img-responsive"  alt="">
-																</div>			
-															</a>		
-														</figure>	
-													</div>
-													<div class="ribben">
-														<p>NEW</p>
-													</div>
-													<div class="block">
-														<div class="starbox small ghosting"> </div>
-													</div>
-													<div class="women">
-														<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-														<span class="size">XL / XXL / S </span>
-														<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-														<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-													</div>
-												</div>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</li>
-								</ul>
+									</form>
+								</div>
 							</div>
+							@endforeach
+							
+							<div class="clearfix"></div>
 						</div>
+						</li>
+						</ul>
 					</div>
 				</div>
+			</div>
+		</div>
 			<!--Products-->
 			<div class="latest-w3">
 				<div class="container">
-					<h3 class="tittle1">Latest Fashion Trends</h3>
+					<h3 class="tittle1">Discount Product</h3>
 					<div class="latest-grids">
 						<div class="col-md-4 latest-grid">
 							<div class="latest-top">

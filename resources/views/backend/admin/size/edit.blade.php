@@ -11,7 +11,7 @@
                 @endif
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ url('/size/update/'.$color->id )}}" method="post">
+                        <form action="{{ url('/size/update/'.$size->id)}}" method="post">
                         @csrf
                         <div class="form-group">
                             <label>Category</label>
@@ -20,11 +20,12 @@
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                @endforeach 
+
                             </select>
                         </div>
                         <div class="form-group">
                             <label> Size Name</label>
-                            <input type="text" name="name" value="{{ $color->name }}" class="form-control"/>
+                            <input type="text" name="name" value="{{ $size->name }}" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <label for="">Status</label>
